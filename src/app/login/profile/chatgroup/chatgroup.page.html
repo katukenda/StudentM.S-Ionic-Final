@@ -1,0 +1,88 @@
+<ion-header >
+    <ion-toolbar color="primary">
+   
+      <ion-title>
+          <div text-center> Welcome To Chat Group</div></ion-title> 
+    </ion-toolbar>
+    <ion-item><ion-text>Add the Course....</ion-text>
+
+
+    <br>
+        
+      <ion-select [(ngModel)]="room">
+        <ion-select-option  *ngFor="let group of chatgroups" value={{group.course}} >{{group.course}}</ion-select-option>
+       
+      </ion-select>
+  
+     
+</ion-item>
+
+ <ion-button (click)="joinRoom()">Join</ion-button>
+
+  </ion-header>
+  
+  <ion-content #content >
+  
+    
+      <div padding>
+      <ion-label  *ngFor="let item of chats">
+  <ion-text color="dark"><h2>{{item.message}}</h2>
+    
+  </ion-text>
+ 
+  <ion-text color="danger">
+  <h4>----{{item.name}}----</h4></ion-text>
+<br>
+</ion-label></div>
+
+    
+
+        
+
+  </ion-content>
+
+
+
+  <ion-footer>
+    
+     
+        <ion-item> <ion-input color="success" spellcheck="true" type="textarea" placeholder="Tyep heare" [(ngModel)]="message" name="message"></ion-input>
+          <ion-button type="submit" color="success" (click)="sendMessage()"><ion-icon name="send"></ion-icon></ion-button>
+        </ion-item>
+          
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <ion-toolbar> <ion-row align-items-center>
+
+
+      <ion-col size="3" size-sm >
+       <ion-button (click)= "mycourseClicked()"><ion-icon  name="school"></ion-icon>
+       </ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button (click)="notifClicked()"><ion-icon name="notifications"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button color="success"  (click)= "chatClicked()"><ion-icon name="chatboxes"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button (click)= "profileClicked()"><ion-icon name="person"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+    <!-- Default Spinner -->
+    
+    </ion-toolbar>
+  </ion-footer>

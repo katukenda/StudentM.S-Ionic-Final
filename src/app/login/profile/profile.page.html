@@ -1,0 +1,75 @@
+
+<ion-header >
+      
+    <ion-toolbar color="primary" ><ion-title></ion-title>
+     <div text-center><h1>Welcome {{student.username}}</h1> </div>
+  
+
+     
+   
+
+</ion-toolbar>  
+
+  </ion-header>
+  
+  <ion-content>
+   
+<ion-item><h1>Profile Details</h1></ion-item>
+
+<ul>
+<li>
+  <h3>Name: {{student.name}}</h3>
+</li>
+<li>
+  <h3>Address: {{student.address}}</h3>
+</li>
+<li>
+    <h3>Email : {{student.email}}</h3>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+   
+    
+</ion-content>
+
+
+  <ion-footer>
+    <ion-toolbar> <ion-row align-items-center>
+      <ion-col size="3" size-sm >
+       <ion-button (click)= "mycourseClicked()"><ion-icon  name="school"></ion-icon>
+       </ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button (click)="notifClicked()"><ion-icon name="notifications"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button (click)= "chatClicked()"><ion-icon name="chatboxes"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col size="3" size-sm>
+        <ion-button color="success" (click)= "profileClicked()"><ion-icon name="person"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+    <!-- Default Spinner -->
+    
+    </ion-toolbar>
+  </ion-footer>

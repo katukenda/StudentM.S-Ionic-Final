@@ -1,0 +1,8 @@
+{
+  "name": "Student-M-S",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,51 @@
+<ion-header >
+  <ion-toolbar color="primary"> <ion-buttons slot="start">
+    <ion-back-button defaultHref="/admin"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Course Manegment</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-button expand="full" shape="round" color="secondary" (click)="addcourseClicked()">Add A New Coursse</ion-button> 
+          <br>
+
+          <ion-label >
+            <ion-text color="primary"><h1> Current Courses</h1></ion-text>
+            <ion-button expand="full" shape="round" color="success" (click)="refreshClicked()">Refresh List <ion-icon name="refresh"></ion-icon></ion-button> 
+          <br>
+           
+          </ion-label>
+
+<ion-content >
+    
+  <ion-card *ngFor="let cd of addcourseService.courseDetails">
+      <ion-item color="dark"></ion-item>
+    <ion-card-header >
+      
+      <ion-card-title>
+        
+        <ion-text color="tertiary">
+          <h1>{{cd.course}}</h1>
+      </ion-text></ion-card-title>
+    
+     <br></ion-card-header>
+     <ion-card-content>
+        <h1>Duration: {{cd.duartion}}</h1>
+     <h2>Registration Fees: <ion-text color="danger">{{cd.regfee}}</ion-text>  </h2>
+    <h2>Total Fees: <ion-text > {{cd.totfee}}</ion-text></h2>
+    <h2>Installation Fees<ion-text color="danger"> {{cd.insfee}}</ion-text></h2>
+    <h1>Time slot: <ion-text color="primary">{{cd.dayandtime}}</ion-text></h1>
+     <h2>{{cd.sdate}} Start <br> {{cd.edate}} End</h2>
+     
+    
+  
+    
+  
+   
+    
+    </ion-card-content>
+    <ion-icon name="trash" color="danger" size="large"  (click)="onDelete(cd._id, coursedetailsForm)"></ion-icon>
+    
+  </ion-card>
+
+</ion-content>

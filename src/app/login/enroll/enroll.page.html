@@ -1,0 +1,75 @@
+<ion-header >
+    <ion-toolbar color="primary"><ion-buttons slot="start">
+      <ion-back-button defaultHref="/mycourse"></ion-back-button>
+    </ion-buttons>
+      <ion-title>
+          <div text-center> Enroll To New coursess</div></ion-title> 
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-text><h1><u>Enrollments Rules</u></h1></ion-text>
+<ion-text color="danger">  <ol >
+      <li>Before Enrollment you must know all information about course.. <br>
+          ex:- payments,lecture times
+      </li>
+      <li>Once you enroll one course you can not change it online. you must meet admins in system.
+      </li>
+      <li>The system get automatically your information and you should select only course that you need to enroll . If they are not correct inform admins it.</li>
+      <li>When you enroll in a course you can join with chat group that relavant to course.</li>
+  </ol></ion-text> 
+ 
+  <table>
+      <tr>
+          <th><ion-item>Your username : </ion-item></th>
+          <td>
+                  
+             <ion-item><h6 >{{user.username}}</h6></ion-item>
+                  
+              
+              
+          </td>
+      </tr>
+  
+    <tr>
+        <th> <ion-item>Your full name : </ion-item></th>
+        <td>
+                
+           <ion-item>
+              <h6 >{{user.name}}</h6></ion-item>
+           
+            
+        </td>
+    </tr>
+    <tr>
+        <th><ion-item>Your email : </ion-item></th>
+        <td>
+                
+            
+                 <ion-item> <h6 >{{user.email}}</h6></ion-item>
+            
+            
+        </td>
+    </tr>
+    <tr>
+          <th><ion-item>Select Course : </ion-item></th>
+         
+          <ion-select placeholder="Select A Course" [(ngModel)]="course">
+              <ion-select-option *ngFor="let item of coursearray">{{item.course}}</ion-select-option>
+              
+            </ion-select>
+                
+              
+         
+    </tr>
+    
+    <div class="col-s12 m4">
+          <ion-button type="button" class="btn btn-success pull-right" (click)="Submit()">Submit</ion-button>
+  </div>
+
+  </table>
+
+
+
+
+  </ion-content>

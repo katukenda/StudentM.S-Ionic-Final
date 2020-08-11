@@ -1,0 +1,135 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-back-button defaultHref="/admin" slot="start"></ion-back-button>
+    <ion-title>Assigning Teachers for teachers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  
+<ion-item><h3>Select Teacher Name</h3></ion-item>
+  <ion-select [(ngModel)]="teacher1">
+      <ion-select-option color="danger" *ngFor="let item of teacherarray" value={{item.username}}>{{item.username}}</ion-select-option>
+     
+    </ion-select>
+
+  
+  
+  <ion-item><h3>Select Course</h3></ion-item>
+  <ion-select  [(ngModel)]="course">
+
+      <ion-select-option *ngFor="let item of coursearray" value={{item.course}} >{{item.course}}</ion-select-option>
+  </ion-select>
+  <ion-button (click)="Submit()">SUBMIT</ion-button>
+<br>
+  <br>
+  
+
+<!-- <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+          <ion-label color="dark"><h1>Teachers Details</h1></ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label color="success">View Details By Course</ion-label>
+        <ion-radio slot="start"  checked (click)="courseClick()"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="secondary">View Details By Name</ion-label>
+        <ion-radio slot="start"  (click)="teacherClick()"></ion-radio>
+      </ion-item>
+  <br>
+      
+    </ion-radio-group>
+  </ion-list>
+
+  <div *ngIf="state; then byCourse else byTeacher"></div>
+
+  <ng-template #byCourse> 
+          
+       <table>
+           <tr>
+            
+               <th>  <ion-label  color="success">Course Name</ion-label></th>
+               <th><ion-label  color="success">Teachers Name</ion-label></th>
+           </tr>
+           
+           <tr *ngFor="let c of adminService.courses">
+               <td> <ion-item> {{ c.course }}</ion-item>
+                 
+               </td>
+               <td><ion-item> {{ c.teacher }}</ion-item>
+                 
+               </td>
+           </tr>
+       </table> 
+        
+  </ng-template>
+
+  <ng-template #byTeacher> 
+        
+      <table>
+          <tr>
+              <th>  <ion-label color="secondary">Teachers Name</ion-label></th>
+              <th><ion-label color="secondary">Course name</ion-label></th>
+          </tr>
+          <tr *ngFor="let c of adminService.courses">
+              <td>
+                  <ion-item> {{ c.teacher }}</ion-item>
+              </td>
+              <td> <ion-item> {{ c.course }}</ion-item>
+              
+              </td>
+          </tr>
+      </table> 
+       
+ </ng-template> -->
+
+
+<ion-item><h2>Teachers Details</h2></ion-item>
+ 
+
+        
+        <table>
+        
+            <tr>
+                  <th><ion-item>View Courses By Teacher Name : </ion-item></th>
+                  
+                          <ion-select  class="browser-default" [(ngModel)]="teacher2">
+                          
+                                  <ion-select-option *ngFor="let item of teacherarray" value={{item.username}} >{{item.username}}</ion-select-option>
+                                       
+                          </ion-select>
+                      
+                  
+            </tr>
+         
+                
+                <ion-button type="button" class="btn btn-success pull-right" (click)="teacherSubmit()">Submit</ion-button>
+            
+          </table>
+            
+
+          <table>
+            <tr>
+              <th><ion-item>Courses conducted by {{teacher2}}</ion-item></th>
+            </tr>
+            
+            <tr *ngFor="let t of adminService.courses">
+              <td><ion-item>{{t.course}}</ion-item></td>
+              <td><a class="btn btn-primary" (click)="onDelete(t._id)">Remove</a></td>
+            </tr>
+          </table>
+
+
+
+
+
+
+
+
+
+</ion-content>

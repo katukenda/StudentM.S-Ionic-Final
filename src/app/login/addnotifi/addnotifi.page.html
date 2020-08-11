@@ -1,0 +1,72 @@
+<ion-header >
+  <ion-toolbar color="primary">
+      <ion-back-button defaultHref="teachers" slot="start"></ion-back-button>
+                    
+    <ion-title><div text-center>Add a Notice </div></ion-title>
+  </ion-toolbar>
+  
+
+</ion-header> 
+     
+<ion-content>
+    <form #noticeForm="ngForm" (ngSubmit)="Submit()">
+        <ion-input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="noticeService.selectedNotice._id"></ion-input>
+        <div class="raw">select a course</div>
+       
+        <div class="row">
+          <div class="input-field col s12">
+            
+                <ion-select  class="browser-default" name="course" #name="ngModel" [(ngModel)]="course" >
+                    <!-- <option  selected>select chat group</option>  -->
+                  <ion-select-option *ngFor="let s of courses" value={{s.course}} >{{s.course}}</ion-select-option>
+                 
+              </ion-select>
+            <!-- <input type="text" name="course" #name="ngModel" [(ngModel)]="noticeService.selectedNotice.course" placeholder="Enter course" required>
+             -->
+          </div>
+        </div>
+       
+        <div class="row">
+            <div class="input-field col s12">
+              <ion-input type="date" name="date" #name="ngModel" [(ngModel)]="date" placeholder="Enter date" required></ion-input>
+              <ion-label>Date :
+                
+              </ion-label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <ion-input type="text" name="notice" #name="ngModel" [(ngModel)]="notice" placeholder="Write your notice" required></ion-input>
+                <ion-label>Notice :
+                  
+                </ion-label>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="input-field col s12">
+                <ion-button class="btn btn-custom right" type="button" (click)="resetForm(noticeForm)">Reset</ion-button>
+                <ion-button class="btn btn-custom right" type="submit" [disabled]="!noticeForm.valid">Submit</ion-button>
+              </div>
+          </div>
+
+      </form>
+  
+     <ion-card *ngFor="let ntc of noticeService.notices" style="background-color: rgb(206, 206, 134)">
+        <ion-card-header>
+            <ion-card-title color="primary"><h2>Couse: {{ntc.course}}</h2></ion-card-title>
+          <ion-card-subtitle color="dark"><h4>{{ntc.notice}}</h4></ion-card-subtitle>
+         
+        </ion-card-header>
+      
+        <ion-card-content>
+         
+          <ion-note  slot="end" color="danger">{{ntc.date}}</ion-note>
+        </ion-card-content>
+
+        <ion-icon name="trash" color="danger" size="large"  (click)="onDelete(ntc._id, noticeForm)"></ion-icon>
+       
+        <!-- <ion-icon name="create" color="success" size="large" (click)="onEdit(ntc)"></ion-icon>
+      -->
+      </ion-card>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header color="primary">
+    <ion-button (click)="closeClicked()" color="danger">Close</ion-button>
+  </ion-header> 
+
+<ion-content >
+<br>
+<form  #noticeForm="ngForm" (submit)="addCourse()"  >
+    Course:
+    <ion-item color="secondary">
+    <ion-input color="dark" type="text" [(ngModel)]="course" name="course"></ion-input>
+  </ion-item>
+
+    Duration:
+  <ion-item color="secondary">  
+    <ion-input color="dark" type="text" [(ngModel)]=" duartion" name=" duartion"></ion-input>
+    </ion-item>
+    registration Fee:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="dark" type="text" [(ngModel)]="regfee" name="regfee"></ion-input>
+    </ion-item>
+    Total Fee:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="danger" type="text" [(ngModel)]="totfee" name="totfee"></ion-input>
+    </ion-item>
+    Installation Fee:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="dark" type="text" [(ngModel)]=" insfee" name="insfee"></ion-input>
+    </ion-item>
+    Day and Time:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="dark" type ="text" [(ngModel)]="dayandtime" name="dayandtime"></ion-input>
+</ion-item>
+    Starting Date:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="dark" type ="date" [(ngModel)]="sdate" name="sdate"></ion-input>
+    </ion-item>
+    Ending Date:
+    <br>
+    <ion-item color="secondary">
+    <ion-input color="dark"  type ="date" [(ngModel)]="edate" name="edate"></ion-input>
+    </ion-item>
+<br>
+<ion-button expand="full" shape="round" type="submit" >Sumbit</ion-button> 
+  <br>
+  <ion-button expand="full" fill="outline" type="reset"  color="primary" >Reset</ion-button>
+  </form>
+
+
+
+</ion-content>

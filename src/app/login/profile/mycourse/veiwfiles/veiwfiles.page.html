@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/mycourse"></ion-back-button>
+        </ion-buttons>
+  <div text-center><h1> View Files</h1></div> 
+  </ion-toolbar></ion-header>
+
+
+      <ion-content >
+      
+         
+              
+             
+         
+  
+        
+              <table>
+                  <thead>
+                    <tr>
+                      
+                      <th><ion-item>File Name</ion-item> </th>
+                     <th> <ion-item>Link</ion-item></th>
+                   
+                      
+                      
+                    
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let f of fileService.files">
+                      
+                      <td>{{ f.filename }}</td>
+
+                      <td>
+                        <a target="_blank" href="https://smsback.herokuapp.com/{{f?.file}}">View</a>
+                      </td>
+                    
+                    </tr>   
+                  </tbody>
+                </table>
+          
+          
+          </ion-content>
+          

@@ -1,0 +1,37 @@
+<ion-header >
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/teachers"></ion-back-button>
+        </ion-buttons>
+    
+        <div text-center>
+        <ion-title> Courses </ion-title></div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card *ngFor="let item of courses"  style="background-color: rgb(206, 206, 134)">
+
+      <ion-card-header>
+         <ion-card-title>
+          <ion-text color="dark">
+              <div text-center> <h1>{{item.course}}</h1></div>
+        </ion-text></ion-card-title>
+      
+       <br></ion-card-header>
+       <ion-card-content>
+         <ion-row>  
+          
+           <ion-col>
+             <ion-button expand="full" shape="round" (click)="onSelect(item.course)"> GO TO COURSE</ion-button>
+             
+            </ion-col>
+            
+         </ion-row>
+      </ion-card-content>
+     
+      
+    </ion-card>
+</ion-content>

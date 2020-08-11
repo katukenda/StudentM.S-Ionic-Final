@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-back-button defaultHref="/admin" slot="start"></ion-back-button>
+    <ion-title>Check Student Enrollments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <table>
+            
+        
+    <tr>
+          <th> <ion-item>Select Course Name :</ion-item></th>
+         
+                  <ion-select  class="browser-default" [(ngModel)]="course" >
+                  
+                          <ion-select-option *ngFor="let item of coursearray" value={{item.course}} >{{item.course}}</ion-select-option>
+                               
+                  </ion-select>
+              
+          
+    </tr>
+    
+    
+            <ion-button type="button" class="btn btn-success pull-right" (click)="Submit()">Submit</ion-button>
+   
+</table>
+
+<br><br><hr>
+<br><br>
+
+<ion-item><h5>Students List for {{course}}</h5></ion-item>
+
+<table>
+<tr>
+<th><ion-item>Student Name</ion-item></th>
+<th><ion-item>Unenroll</ion-item></th>
+
+</tr>
+<tr *ngFor="let s of adminService.enrollments">
+<td><ion-item>{{ s.fullname}}</ion-item></td>
+<td><ion-item><a class="btn btn-primary" (click)="onDelete(s._id)">Unenroll</a></ion-item></td>
+
+</tr>
+
+</table>
+
+
+
+</ion-content>

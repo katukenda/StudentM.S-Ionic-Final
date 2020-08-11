@@ -1,0 +1,98 @@
+<ion-header style="background-color: rgb(47, 56, 145)">
+    <!-- <div class="CName"><h1>VICERANT IT Solutions
+      </h1></div> -->
+      <div text-center><ion-text>
+          
+            VICERANT IT Solutions
+         
+          </ion-text> </div>
+  
+  
+
+    
+
+     <ion-button color="primary" >
+      <ion-icon name="home" slot="start"></ion-icon>Home
+     </ion-button>
+  
+  <ion-button color="success" (click)="coursesClicked()">
+      <ion-icon name="school" slot="start"></ion-icon>Courses</ion-button>
+  
+      <!-- <ion-button color="primary" (click)= "articleClicked()">
+        <ion-icon name="book" slot="start"></ion-icon>Article</ion-button> -->
+  
+      <ion-button color= "success" (click)= "loginClicked()">Login</ion-button>
+  
+   
+  
+  </ion-header>
+ 
+ 
+
+  
+ <ion-content style="border: 0px"  >
+  <ion-card style="background-color: rgb(53, 53, 44)">
+    <ion-card-header style="border: 0px" >
+      </ion-card-header>
+   <ion-card-content>
+        <img src="assets\main.jpg" >
+             </ion-card-content>
+  </ion-card> 
+
+
+<!-- event card -->
+<!-- <ion-content>
+<ion-grid>
+  <ion-row>
+<ion-col>
+  <ion-img [sec]="assets\main.jpg"></ion-img>
+</ion-col>  </ion-row>
+</ion-grid>
+
+</ion-content> -->
+
+
+  <ion-card style="background-color: rgb(29, 29, 26)">
+      <ion-slides pager="true">
+
+          <ion-slide> 
+            <img src="assets\event1.jpg">
+          
+          </ion-slide>
+              <ion-slide> 
+                <img src="assets\evant2.jpg">
+          </ion-slide>
+              <ion-slide><img src="assets\event3.jpg">
+          </ion-slide>
+        </ion-slides> 
+       </ion-card>    
+    
+  <!-- fab -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button> <ion-icon name="thumbs-up"></ion-icon></ion-fab-button>
+  
+    <ion-fab-list side="start">
+        <a rel="noopener" target="_blank" href="https://www.facebook.com/VicerantCorp/"> <ion-fab-button> <ion-icon name="logo-facebook"></ion-icon></ion-fab-button></a>
+        <a rel="noopener" target="_blank" href="https://www.linkedin.com/company/vicerant/"> <ion-fab-button> <ion-icon name="logo-linkedin"></ion-icon></ion-fab-button></a>
+        <a rel="noopener" target="_blank" href="https://twitter.com/vicerant_trends"> <ion-fab-button> <ion-icon name="logo-twitter"></ion-icon></ion-fab-button></a>
+    </ion-fab-list>
+  </ion-fab>
+  
+
+<!-- footer -->
+  <ion-footer >
+  
+      <ion-item  color="dark">
+        <ion-label>
+            <h3>E-mail</h3>
+        
+            <p>janitha.17@itfac.mrt.ac.lk</p>
+           
+           
+          
+               <p>0717171717</p>
+        </ion-label>
+       </ion-item>
+    </ion-footer>
+
+</ion-content>

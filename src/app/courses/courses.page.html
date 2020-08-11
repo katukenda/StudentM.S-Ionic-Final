@@ -1,0 +1,69 @@
+<ion-header style="background-color: rgb(47, 56, 145)">
+  <!-- <div class="CName"><h1>VICERANT IT Solutions
+    </h1></div> -->
+    <div text-center><ion-text>
+        
+          VICERANT IT Solutions
+       
+        </ion-text> </div>
+
+
+   <ion-button color="success" (click)=" goBack() ">
+    <ion-icon name="home" slot="start"></ion-icon>Home
+   </ion-button>
+
+<ion-button color="primary" (click)="coursesClicked()">
+    <ion-icon name="school" slot="start"></ion-icon>Courses</ion-button>
+
+   
+
+    <ion-button color= "success" (click)= "loginClicked()">Login</ion-button>
+
+ 
+
+</ion-header>
+
+
+
+<ion-content>
+
+    <ion-card *ngFor="let cd of addcourseService.courseDetails" style="background-color: rgb(156, 156, 90)" >
+      
+          <ion-text color="dark" size="10px">
+            <div text-center > <h1>{{cd.course}}</h1></div>
+        </ion-text>
+      
+       
+
+       <ion-card-content style="background-color: rgb(238, 238, 222)">
+         <ion-text color="dark"> <h1>Duration: {{cd.duartion}}</h1></ion-text>
+       <h2>Registration Fees: <ion-text color="danger">{{cd.regfee}}</ion-text>  </h2>
+      <h2>Total Fees: <ion-text > {{cd.totfee}}</ion-text></h2>
+      <h2>Installation Fees<ion-text color="danger"> {{cd.insfee}}</ion-text></h2>
+      <h1>Time slot: <ion-text color="primary">{{cd.dayandtime}}</ion-text></h1>
+       <h2>{{cd.sdate}} Start <br> {{cd.edate}} End</h2>
+       
+      
+    
+      
+    
+     
+      </ion-card-content>
+     
+      
+    </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+      <ion-fab-button> <ion-icon name="thumbs-up"></ion-icon></ion-fab-button>
+    
+      <ion-fab-list side="start">
+          <a rel="noopener" target="_blank" href="https://www.facebook.com/VicerantCorp/"> <ion-fab-button> <ion-icon name="logo-facebook"></ion-icon></ion-fab-button></a>
+          <a rel="noopener" target="_blank" href="https://www.linkedin.com/company/vicerant/"> <ion-fab-button> <ion-icon name="logo-linkedin"></ion-icon></ion-fab-button></a>
+          <a rel="noopener" target="_blank" href="https://twitter.com/vicerant_trends"> <ion-fab-button> <ion-icon name="logo-twitter"></ion-icon></ion-fab-button></a>
+      </ion-fab-list>
+    </ion-fab>
+
+
+</ion-content>
+
+

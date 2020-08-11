@@ -1,0 +1,68 @@
+<ion-header >
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/teachers"></ion-back-button>
+          </ion-buttons>
+    <div text-center> <h1>Add File</h1></div> 
+    </ion-toolbar></ion-header>  
+ 
+    <ion-item> <h4>Course : {{course}}</h4></ion-item>
+                   
+                             
+                   
+    <input color="primary" id="file-input" type="file" name="file" (change)="fileProgress($event)"  />
+<ion-item  *ngIf="fileUploadProgress">
+  Upload progress: {{ fileUploadProgress }}
+</ion-item>
+
+    
+
+
+  <ion-item *ngIf="previewUrl">   <img [src]="previewUrl" height="300" />      </ion-item>
+            
+
+<ion-item *ngIf="uploadedFilePath">  {{uploadedFilePath}}</ion-item>
+
+
+ 
+<ion-button (click)="onSubmit()">Submit</ion-button>
+   
+
+
+
+
+
+
+        <ion-content>
+        
+           
+                
+               
+           
+    
+          
+                <table >
+                    <thead>
+                      <tr>
+                        
+                        <th><ion-item>File Name</ion-item> </th>
+                       <th> <ion-item>Link</ion-item></th>
+                        <th> <ion-item> Delete</ion-item></th>
+                        
+                        
+                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let f of fileService.files">
+                        
+                        <td>{{ f.filename }}</td>
+                        <td><a target="_blank" href="https://smsback.herokuapp.com/{{f?.file}}">Click Here</a></td>
+                        <td><a  class="btn btn-primary" (click)="onDelete(f._id)">Delete</a></td>
+                      </tr>   
+                    </tbody>
+                  </table>
+            
+            
+            </ion-content>
+            

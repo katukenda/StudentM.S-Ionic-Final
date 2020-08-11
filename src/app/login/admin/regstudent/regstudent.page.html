@@ -1,0 +1,67 @@
+<ion-header >
+  <ion-toolbar  color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    <ion-title><div text-center><h1>Register</h1></div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-title></ion-title>
+ <form (submit)="onRegister()">
+    <br>
+    Role:
+    <ion-item>
+     
+      <ion-select [(ngModel)]= "role"  name="role" placeholder="Select A Role">
+<ion-select-option>Student</ion-select-option>
+<ion-select-option>Teacher</ion-select-option>
+<ion-select-option>Admin</ion-select-option>
+      </ion-select>
+      
+      
+  </ion-item><br>
+    Name:
+    <ion-item>
+        <ion-input placeholder="Name"type="text" [(ngModel)]= "name" name="name"></ion-input>
+    </ion-item>
+    <br>
+    E-mail:
+    <ion-item>
+        <ion-input placeholder="E-mail" type="text" [(ngModel)]= "email" name="email"></ion-input>
+    </ion-item>
+
+    <br>
+    Address:
+    <ion-item>
+        <ion-input placeholder="Address" [(ngModel)]= "address"  name="address"></ion-input>
+    </ion-item>
+    <br>
+    Phone Number:
+    <ion-item>
+        <ion-input placeholder="Phone Number" type="number" [(ngModel)]= "phoneNumber"  name="phoneNumber"></ion-input>
+    </ion-item>
+    <br>
+    Username:
+    <ion-item>
+        <ion-input placeholder="Username" [(ngModel)]= "username"  name="username"></ion-input>
+    </ion-item>
+    <br>
+  
+  
+    Password:  
+    <ion-item>
+        <ion-input placeholder="Password" type="password" [(ngModel)]= "password" name="password"></ion-input>
+    </ion-item>
+
+        <ion-button expand="full" type="submit">Register</ion-button>
+        <br>
+        
+</form>
+
+    
+    
+
+</ion-content>

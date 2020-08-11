@@ -1,0 +1,79 @@
+<ion-header > 
+      
+  <ion-toolbar color="primary"><ion-title></ion-title>
+   <ion-row align-items-center>
+      <ion-col size="6" align-items-center>
+        <h3>Teacher Profile </h3>
+      </ion-col>
+ 
+      <ion-col size="6">
+          <ion-text color="dark">
+              <h4><ion-icon name="person"></ion-icon> {{teacher.username}}</h4>
+            </ion-text>
+            
+      </ion-col>
+    </ion-row>
+    
+</ion-toolbar>  
+
+</ion-header>
+
+
+
+<ion-content>
+ 
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Profile Details</ion-card-title>
+    </ion-card-header>
+  
+
+    <ion-card-content>
+        <ion-text color="dark">
+            <h1>Name: {{teacher.name}}</h1>
+          </ion-text>
+          <ion-text color="dark">
+              <h1>User Name: {{teacher.username}}</h1>
+            </ion-text>
+            <ion-text color="dark">
+                <h1>Email: {{teacher.email}}</h1>
+              </ion-text>
+
+      </ion-card-content>
+  </ion-card>
+  
+
+<ion-row>
+  <ion-col size="6">
+      <ion-card color="tertiary" (click)="courseClicked()">
+          <ion-card-header>
+           
+            <ion-card-title>Manage Courses</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+           </ion-card-content>
+        </ion-card>
+  </ion-col>  
+  
+  <ion-col size="6">
+      <ion-card color="tertiary" (click)= "addnotiClicked()">
+          <ion-card-header>
+            
+            <ion-card-title>Add Notifications</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+           </ion-card-content>
+        </ion-card>
+        
+  </ion-col>
+
+ 
+</ion-row>
+</ion-content>
+<ion-footer>
+  <ion-toolbar> 
+  <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+</ion-toolbar>  
+</ion-footer>

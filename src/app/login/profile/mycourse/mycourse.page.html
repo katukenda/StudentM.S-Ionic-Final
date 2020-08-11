@@ -1,0 +1,81 @@
+<ion-header >
+  <ion-toolbar color="primary" >
+      <ion-title>
+          <div text-center> My Courses</div></ion-title> 
+   </ion-toolbar>
+   <br>
+  <ion-button expand="full"  color="primary" shape="round" (click)="enroll()">Enroll For New courses</ion-button>
+ 
+</ion-header>
+
+<ion-content >
+ 
+  
+
+<ion-card *ngFor="let item of courses " style="background-color: rgb(206, 206, 134)"><ion-text color="dark">
+  <div text-center ><h1><u><b>{{item.course}}</b></u></h1></div></ion-text>
+  
+  
+
+  <ion-card-content >
+    <ion-button expand="full"  fill="outline" (click)="onSelect(item.course)"> GO TO COURSE</ion-button>
+    <ion-button expand="full"  fill="outline"  (click)="onSelect2(item.course)"> Go To Payments</ion-button>
+   
+     
+    <!-- <ion-button expand="full"  fill="outline" routerLink="">
+        Check attendance
+        </ion-button>
+        <ion-button expand="full"  fill="outline">
+             Check exam marks
+          </ion-button> -->
+ 
+  
+       
+ 
+      
+     
+      
+     
+  </ion-card-content>
+</ion-card>
+
+
+
+  
+  </ion-content>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar> <ion-row align-items-center>
+    <ion-col size="3" size-sm >
+     <ion-button color="success"  (click)= "mycourseClicked()"><ion-icon  name="school"></ion-icon>
+     </ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm>
+      <ion-button  (click)="notifClicked()"><ion-icon name="notifications"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm>
+      <ion-button (click)= "chatClicked()"><ion-icon name="chatboxes"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm>
+      <ion-button (click)= "profileClicked()"><ion-icon name="person"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+  <!-- Default Spinner -->
+  
+  </ion-toolbar>
+</ion-footer>

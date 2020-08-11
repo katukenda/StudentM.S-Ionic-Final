@@ -1,0 +1,53 @@
+<ion-header >
+  <ion-toolbar color="primary"> <ion-buttons slot="start">
+    <ion-back-button defaultHref="/admin"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Check Payments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item> <h3>Select course to see payments</h3> </ion-item>
+   
+
+    <table>
+        <tr><ion-item> <th>Select Course Name : </th></ion-item>
+           
+           
+                              <ion-select  class="browser-default" [(ngModel)]="course" >
+                              
+                                      <ion-select-option *ngFor="let item of coursearray" value={{item.course}} >{{item.course}}</ion-select-option>
+                                           
+                              </ion-select>
+                          
+                     
+        </tr>
+    
+                
+                        <ion-button type="button" class="btn btn-success pull-right" (click)="Submit()">Submit</ion-button>
+             
+
+    </table>
+
+    <br><br><hr>
+        <br><br>
+<ion-item></ion-item>
+        <h5>Payment List for {{course}}</h5>
+
+         <table>
+        <tr>
+            <th><ion-item>Student Username</ion-item></th>
+            <th><ion-item>amount</ion-item></th>
+            
+        </tr>
+        <tr *ngFor="let s of payments">
+            <td><ion-item>{{ s.username }}</ion-item></td>
+            <td><ion-item>{{s.amount}}</ion-item></td>
+            
+        </tr>
+
+        </table>
+
+
+
+</ion-content>

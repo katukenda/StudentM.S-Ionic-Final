@@ -1,0 +1,41 @@
+<ion-header style="background-color: rgb(18, 143, 74)">
+    <!-- <div class="CName"><h1>VICERANT IT Solutions
+      </h1></div> -->
+      <div text-center><ion-text>
+          
+            VICERANT IT Solutions
+         
+          </ion-text> </div>
+  <ion-item color="success">
+  
+     <ion-button color="primary" (click)=" goBack() ">
+      <ion-icon name="home" slot="start"></ion-icon>Home
+     </ion-button>
+  
+  <ion-button color="primary" (click)="coursesClicked()">
+      <ion-icon name="school" slot="start"></ion-icon>Courses</ion-button>
+  
+      <!-- <ion-button color="primary" (click)= "articleClicked()">
+        <ion-icon name="book" slot="start"></ion-icon>Article</ion-button> -->
+  
+      <ion-button color= "danger" (click)= "loginClicked()">Login</ion-button>
+  
+    </ion-item>
+  
+  </ion-header>
+  
+ 
+<ion-content>  
+
+     <ion-list>
+        <ion-item *ngFor="let Articles of articles">
+          <ion-avatar slot="start">
+            <ion-img [src]="Articles.imageUrl"></ion-img>
+          </ion-avatar>
+          <ion-label>{{Articles.title}}</ion-label>
+        </ion-item>
+       
+           </ion-list> 
+
+        
+</ion-content>

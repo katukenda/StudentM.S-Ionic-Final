@@ -1,0 +1,49 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title>
+        <div text-center>Notifications</div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-card *ngFor="let ntc of notice" style="background-color: rgb(206, 206, 134)">
+        <ion-card-header>
+            <ion-card-title color="primary"><h2>Couse: {{ntc.course}}</h2></ion-card-title>
+          <ion-card-subtitle color="dark"><h4>{{ntc.notice}}</h4></ion-card-subtitle>
+         
+        </ion-card-header>
+      
+        <ion-card-content>
+         
+          <ion-note  slot="end" color="danger">{{ntc.date}}</ion-note>
+        </ion-card-content>
+
+       
+     
+      </ion-card>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar> <ion-row align-items-center>
+    <ion-col size="3" size-sm >
+     <ion-button (click)= "mycourseClicked()"><ion-icon  name="school"></ion-icon>
+     </ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm>
+      <ion-button color="success"  (click)="notifClicked()"><ion-icon name="notifications"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm color="success">
+      <ion-button (click)= "chatClicked()"><ion-icon name="chatboxes"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="3" size-sm>
+      <ion-button (click)= "profileClicked()"><ion-icon name="person"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+  <!-- Default Spinner -->
+  
+  </ion-toolbar>
+</ion-footer>

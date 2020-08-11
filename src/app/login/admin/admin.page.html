@@ -1,0 +1,107 @@
+
+<ion-header > 
+  <ion-toolbar color="primary"><ion-title></ion-title>
+<div text-center><h2>Admin Page</h2></div>
+
+
+</ion-toolbar>  
+</ion-header>
+
+
+
+<ion-content>
+
+
+ <!-- <ion-card>
+
+
+    <ion-card-header color="warning">
+        <ion-card-title>Profile Details</ion-card-title>
+    </ion-card-header>
+<ion-card-content>
+        <ion-text color="secondary">
+            <h1>Name: {{user.name}}</h1>
+          </ion-text>
+          <ion-text color="secondary">
+              <h1>User Name: {{user.username}}</h1>
+            </ion-text>
+            <ion-text color="secondary">
+                <h1>Email: {{user.email}}</h1>
+              </ion-text>
+
+      </ion-card-content >
+  </ion-card> -->
+  <ion-button expand="full" shape="round" type="submit"  (click)="studentClicked()">Register Users</ion-button> 
+       <br>
+   
+   <ion-button expand="full" shape="round" type="submit"  (click)="comanegmentClocked()">Course Manegment</ion-button> 
+   <br>
+   <!-- <ion-button expand="full" shape="round" type="submit"  (click)="attendenceClicked()">Attendance Management</ion-button> 
+   <br>
+   <ion-button expand="full" shape="round" type="submit"  (click)="examMarks()">Exam Marks Management</ion-button> 
+   <br> -->
+   <ion-button expand="full" shape="round" type="submit"  (click)="payClicked()">Payment Checking</ion-button> 
+  
+  
+   <ion-row>
+    
+      <ion-col size="6">
+          <ion-card color="primary" (click)="courseClicked()">
+              <ion-card-header>
+               
+                <ion-card-title>Check Student<br> enrollment</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+               </ion-card-content>
+            </ion-card>
+      </ion-col>  
+      <ion-col size="6">
+          <ion-card color="primary" (click)="tassingnClicked()">
+              <ion-card-header>
+               
+                <ion-card-title>Add Courses For <br>Teachers</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+               </ion-card-content>
+            </ion-card>
+      </ion-col>  
+      
+      <ion-col size="6">
+          <ion-card color="primary" (click)= "stunregClicked()">
+              <ion-card-header>
+                
+                <ion-card-title>Unregister students</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>      
+               </ion-card-content>
+            </ion-card>
+            
+      </ion-col>
+
+      <ion-col size="6">
+          <ion-card color="primary" (click)= "teunregClicked()">
+              <ion-card-header>
+                
+                <ion-card-title>Unregister Teachers</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+               </ion-card-content>
+            </ion-card>
+            
+      </ion-col>
+    
+     
+    </ion-row>
+    
+  
+</ion-content>
+<ion-footer>
+    <ion-toolbar> 
+        <ion-button (click)= "lgoutClicked()" expand="full" color="danger">Logout</ion-button>
+
+       </ion-toolbar>  
+</ion-footer>

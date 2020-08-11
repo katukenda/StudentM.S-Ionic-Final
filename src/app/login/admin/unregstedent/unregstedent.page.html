@@ -1,0 +1,30 @@
+<ion-header >
+    <ion-toolbar color="primary" >
+        <ion-back-button defaultHref="/admin" slot="start"></ion-back-button>
+    <ion-title>Unregister Student</ion-title>
+  </ion-toolbar>
+  <h3>Registerd Student List</h3>
+</ion-header>
+
+<ion-content>
+    <table>
+        <tr><ion-item><h4>Student Name</h4></ion-item>
+            <th></th>
+            
+            <th><ion-item ><h4>Unregister</h4></ion-item></th>
+            
+        </tr>
+
+        <tr *ngFor="let s of adminService.users">
+            <td><ion-item>{{ s.name }}</ion-item></td>
+            
+            <td>
+                <ion-item ><a class="btn btn-primary" (click)="onDeleteReg(s.username)">Unregister</a></ion-item></td>
+           
+        </tr>
+
+        </table>
+
+
+</ion-content>
+
